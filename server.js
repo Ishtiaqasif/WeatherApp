@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 app.post('/weather', (req, res) => {
     console.log(req.body);
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${req.body.cityName}&APPID=${API_KEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${req.body.cityName}&APPID=${API_KEY}&units=metric`;
     //const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
     axios({

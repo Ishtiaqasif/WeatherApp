@@ -30,13 +30,14 @@ const
             setWeatherData(data.weatherInfo/*, place.fomatted_address*/);
         })
         .catch((error) => {
-            //console.error('client-side error: ', error);
+            
         });
     }
 });
 
 //const icon = new Skycons({color: '#FF4500'});
 const statusElement = document.getElementById('data-status');
+const iconElement = document.getElementById('icon');
 const locationElement = document.getElementById('data-location');
 const windElement = document.getElementById('data-wind');
 const tempElement = document.getElementById('data-temperature');
@@ -45,10 +46,12 @@ const preciElement = document.getElementById('data-precipitation');
 let setWeatherData = (data) => {
     
     statusElement.textContent = data.weather.main;
+    iconElement.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    iconElement.style.display = '';
     locationElement.textContent = data.name;
-    windElement.textContent = data.wind.speed;
-    tempElement.textContent = data.main.temp;
-    preciElement.textContent = data.main.humidity;
+    windElement.textContent =Math.round(+(data.wind.speed) * 1000 / 3600) + 'kmp';
+    tempElement.textContent = data.main.temp + '\u00B0C';
+    preciElement.textContent = data.main.humidity + '%';
 
     //icon.set('icon', data.weather.icon)
     

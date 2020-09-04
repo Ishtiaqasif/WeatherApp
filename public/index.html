@@ -15,7 +15,8 @@
     <div class="container">
         <div class="header">
             <div class="icon-container">
-                <canvas id="icon" width="100" height="100"></canvas>
+                <!-- <canvas id="icon" width="100" height="100"></canvas> -->
+                <img id="icon" style="display:none" width="100" height="100" src="" alt="">
             </div>
         </div>
         <div class="content">
@@ -33,12 +34,12 @@
                     <div class="value" id="data-temperature">TBD</div>
                 </div>
                 <div class="detail">
-                    <div class="title">Precipitation</div>
+                    <div class="title">Humidity</div>
                     <div class="value" id="data-precipitation">TBD</div>
                 </div>
                 <div class="city-search-container">
                     <!-- <input placeholder="Enter Location" type="text" class="city-search" id="data-city-serach"> -->
-                    <select name="" id="data-city-serach">
+                    <select name="" class="city-search" id="data-city-serach">
                         <option value="">--select city--</option>
                         <option value="Dhaka">Dhaka</option>
                         <option value="Delhi">Delhi</option>
