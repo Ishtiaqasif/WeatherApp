@@ -1,13 +1,14 @@
 const 
     searchElement = document.getElementById('data-city-serach');// querySelector('[data-city-search]'),
     //searchBox = new google.maps.places.SearchBox(searchElement);
-    let cityName = searchElement.value;
+    //let cityName = searchElement.value;
 
     searchElement.addEventListener("change", () => {
+        let cityName = searchElement.value;
 //searchBox.addListener('places_changed', ()=>{
     //const place = searchBox.getPlaces()[0];
     //if (place == null) {
-        if (cityName.trim() != '') {
+        if (cityName != '') {
         //const latitide = place.geomertry.location.lat();
         //const longitude = place.geomertry.location.lng();
 
@@ -25,12 +26,16 @@ const
         })
         .then(res => res.json())
         .then( data => {
-            console.log(data);
-            setWeatherData(data/*, place.fomatted_address*/);
+            console.log(data.weatherInfo);
+            setWeatherData(data.weatherInfo/*, place.fomatted_address*/);
+        })
+        .catch((error) => {
+            //console.error('client-side error: ', error);
         });
     }
 });
 
+//const icon = new Skycons({color: '#FF4500'});
 const statusElement = document.getElementById('data-status');
 const locationElement = document.getElementById('data-location');
 const windElement = document.getElementById('data-wind');
@@ -44,5 +49,7 @@ let setWeatherData = (data) => {
     windElement.textContent = data.wind.speed;
     tempElement.textContent = data.main.temp;
     preciElement.textContent = data.main.humidity;
+
+    //icon.set('icon', data.weather.icon)
     
 };

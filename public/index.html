@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD0_9lgZNOpHd653dJ6p4bmHMTtkLJCSc&libraries=places"></script>
+    <!--<script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD0_9lgZNOpHd653dJ6p4bmHMTtkLJCSc&libraries=places"></script>
+     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"
+        integrity="sha512-ChQiOC9OBUvQ75KLv3+YRxCQLV1bSWnGfcSdaP1v3iu6XSkmge+eXCu3lcV+O+Uvdjb+LGMZd/KAvV4rkEfbzw=="
+        crossorigin="anonymous"></script> -->
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -34,7 +37,17 @@
                     <div class="value" id="data-precipitation">TBD</div>
                 </div>
                 <div class="city-search-container">
-                    <input placeholder="Enter Location" type="text" class="city-search" id="data-city-serach">
+                    <!-- <input placeholder="Enter Location" type="text" class="city-search" id="data-city-serach"> -->
+                    <select name="" id="data-city-serach">
+                        <option value="">--select city--</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Istambul">Istambul</option>
+                        <option value="Paris">Paris</option>
+                        <option value="New York">New York</option>
+                        <option value="London">London</option>
+                        <option value="Cairo">Cairo</option>
+                    </select>
                 </div>
             </div>
         </div>
