@@ -1,8 +1,6 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
+let PORT = process.env.PORT || 3000;
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = "04a1d17dd80569df660d3a4cc5290886";//process.env.API_KEY;
 const axios = require('axios');
 const express = require('express');
 const { json } = require('express');
@@ -37,6 +35,6 @@ app.post('/weather', (req, res) => {
         })
 
 });
-app.listen(3000, () => {
-    console.log('Server Started');
+app.listen(PORT, () => {
+    console.log('Server Started...');
 });

@@ -100,6 +100,7 @@
   .city-search-container {
     display: flex;
     justify-content: center;
+    align-content: center;
   }
   
   .city-search {
@@ -109,7 +110,7 @@
     border: 1px solid #777;
     border-radius: 5px;
     padding: 10px 15px;
-    width: 100%;
+    width: 30%;
   }
   
   .pac-item {
